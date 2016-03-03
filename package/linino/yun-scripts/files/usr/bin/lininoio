@@ -413,6 +413,8 @@ then
 							/etc/init.d/mcuio enable &>/dev/null
 							# Check if spi-tty module is enabled
 							/usr/bin/detect-console
+							# updating the ENV value
+							sed -i -e s/no/yes/g /etc/config/mcuiocfg
 
 							# echo "Rebooting..."
 							# reboot && exit
@@ -479,6 +481,8 @@ then
 							$PROGRAMMER /etc/linino/$FILE
 							# Check if spi-tty module is enabled
 							/usr/bin/detect-console
+							# updating the ENV value
+							sed -i -e s/yes/no/g /etc/config/mcuiocfg
 
 							# echo "Rebooting..."
 							# reboot && exit
